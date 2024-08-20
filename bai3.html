@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .text {
+        font-size: medium;
+        width: full;
+        height: full;
+        padding: 30px;
+        text-align: center;
+        color: red;
+        font-size: 20px;
+      }
+    </style>
+    <title>bai3</title>
+  </head>
+  <body>
+    <p class="text"></p>
+    <script>
+      let text = document.querySelector(".text");
+      let arr = [];
+      let n = parseInt(prompt("nhap vao so luong phan tu trong mang: "));
+      for (let i = 0; i < n; i++) {
+        let number = parseInt(prompt("nhap so thu " + (i + 1) + ":"));
+        arr.push(number);
+      }
+      let k = 5;
+      // 1. loai k ra khoi mang
+      let newArr = arr.filter((item) => item !== k);
+      console.log(newArr);
+      //2. dem cac cap so nguyen trong newArr chia het cho k
+      let count = 0;
+
+      for (let i = 0; i < newArr.length; i++) {
+        for (let j = i + 1; j < newArr.length; j++) {
+          if ((newArr[i] + newArr[j]) % 5 === 0) {
+            count++;
+          }
+          // console.log("🚀 ~ count:", count);
+        }
+      }
+      text.innerHTML = `So cap trong mang chia het cho k la: ${count}`;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bai2</title>
+  </head>
+  <body>
+    <script>
+      //Điểm của mỗi học sinh nằm trong khoảng từ 0 đến 100.
+      //Nếu điểm số của học sinh bé hơn 50 tính là trượt
+
+      // 1. lam tron
+      // 2. check dieu kien pass , false
+      var score = parseInt(prompt("Nhập điểm của bạn:"));
+      // console.log(score);
+      function accomplishScore(scoreParam) {
+        if (scoreParam % 5 != 0) {
+          // chia 5 rồi làm tròn rồi lấy kết quả làm tròn nhân 5 ra bội số của 5
+          return Math.round(scoreParam / 5) * 5;
+        }
+        return scoreParam;
+      }
+      var newScore = accomplishScore(score);
+      // console.log(newScore);
+      if (newScore < 50) {
+        alert("false");
+      } else alert("pass");
+    </script>
+  </body>
+</html>
